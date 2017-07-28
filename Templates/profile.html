@@ -49,14 +49,22 @@
         {% endfor %}
             </div>
             <div class="tab-pane" id="following-tab">
-                {% for user in following %}
-                    {{user.username}}<br>
+                 <div class="panel panel-default">
+                    <div class="panel-body">
+                {% for user in following1 %}
+                        You are following the user <span class="label label-primary username"> <a href="{% url 'profile' user.username %}" style="color:white" >@{{user.username}}</span></a><br><br>
                 {% endfor %}
+                    </div>
+                    </div>
             </div>
             <div class="tab-pane" id="followers-tab">
-                {% for user in followers %}
-                    {{user.username}}<br>
+                 <div class="panel panel-default">
+                    <div class="panel-body">
+                {% for user in followers1 %}
+                       You are followed by <span class="label label-primary username"> <a href="{% url 'profile' user.username %}" style="color:white"> @{{user.username}}</span><br><br>
                 {% endfor %}
+                    </div>
+                    </div>
             </div>
         </div>
 
